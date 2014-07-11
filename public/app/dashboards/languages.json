@@ -1,10 +1,10 @@
 {
-  "title": "Where do people tweet?",
+  "title": "Languages",
   "services": {
     "query": {
       "list": {
         "0": {
-          "query": "",
+          "query": "entities.hashtags.text:(\"GER\" OR \"ARG\")",
           "alias": "",
           "color": "#7EB26D",
           "id": 0,
@@ -24,34 +24,6 @@
   },
   "rows": [
     {
-      "title": "Where do people tweet?",
-      "height": "400px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "error": false,
-          "span": 12,
-          "editable": true,
-          "type": "bettermap",
-          "loadingEditor": false,
-          "field": "coordinates.coordinates",
-          "size": 9999,
-          "spyable": true,
-          "tooltip": "text",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ]
-          },
-          "title": "Locations"
-        }
-      ],
-      "notice": false
-    },
-    {
       "title": "",
       "height": "150px",
       "editable": true,
@@ -60,7 +32,40 @@
       "panels": [
         {
           "error": false,
-          "span": 12,
+          "span": 4,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "lang",
+          "exclude": [],
+          "missing": true,
+          "other": true,
+          "size": 20,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": true,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "pie",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "Languages"
+        },
+        {
+          "error": false,
+          "span": 4,
           "editable": true,
           "type": "terms",
           "loadingEditor": false,
@@ -68,18 +73,18 @@
           "exclude": [
             "worldcup"
           ],
-          "missing": true,
+          "missing": false,
           "other": true,
-          "size": 10,
+          "size": 20,
           "order": "count",
           "style": {
             "font-size": "10pt"
           },
-          "donut": false,
+          "donut": true,
           "tilt": false,
           "labels": true,
           "arrangement": "horizontal",
-          "chart": "table",
+          "chart": "pie",
           "counter_pos": "above",
           "spyable": true,
           "queries": {
@@ -90,7 +95,8 @@
           },
           "tmode": "terms",
           "tstat": "total",
-          "valuefield": ""
+          "valuefield": "",
+          "title": "Most popular hashtags"
         }
       ],
       "notice": false
@@ -104,7 +110,7 @@
     "default": "twitter",
     "warm_fields": true
   },
-  "style": "light",
+  "style": "dark",
   "panel_hints": true,
   "pulldowns": [
     {
@@ -115,7 +121,16 @@
       "query": "*",
       "pinned": true,
       "history": [
-        "q=#ARGNED"
+        "entities.hashtags.text:(\"GER\" or \"ARG\")",
+        "*",
+        "text:(\"#ARG\" AND NOT \"#GER\")",
+        "text:(\"#GER\" AND NOT \"#ARG\")",
+        "text:(\"#DEU\" AND NOT \"#ARG\")",
+        "text=\"#GER\"",
+        "text:\"#ARG\"",
+        "text=(\"#ARG\" and not \"#GER\")",
+        "text=\"#ARG\"",
+        "q=*"
       ],
       "remember": 10
     },
@@ -156,7 +171,9 @@
         "2h",
         "1d"
       ],
-      "timefield": "@timestamp"
+      "timefield": "created_at",
+      "now": true,
+      "filter_id": 0
     }
   ],
   "loader": {
@@ -173,5 +190,5 @@
     "load_local": false,
     "hide": false
   },
-  "refresh": "1m"
+  "refresh": false
 }

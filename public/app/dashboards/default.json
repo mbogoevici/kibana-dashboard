@@ -1,10 +1,10 @@
 {
-  "title": "Where do people tweet?",
+  "title": "World Cup 2014",
   "services": {
     "query": {
       "list": {
         "0": {
-          "query": "",
+          "query": "*",
           "alias": "",
           "color": "#7EB26D",
           "id": 0,
@@ -24,35 +24,7 @@
   },
   "rows": [
     {
-      "title": "Where do people tweet?",
-      "height": "600px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "error": false,
-          "span": 11,
-          "editable": true,
-          "type": "bettermap",
-          "loadingEditor": false,
-          "field": "coordinates.coordinates",
-          "size": 9999,
-          "spyable": true,
-          "tooltip": "text",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ]
-          },
-          "title": "Locations"
-        }
-      ],
-      "notice": false
-    },
-    {
-      "title": "",
+      "title": "The World Cup Tweet Centre",
       "height": "150px",
       "editable": true,
       "collapse": false,
@@ -60,35 +32,14 @@
       "panels": [
         {
           "error": false,
-          "span": 4,
+          "span": 12,
           "editable": true,
-          "type": "terms",
+          "type": "text",
           "loadingEditor": false,
-          "field": "lang",
-          "exclude": [],
-          "missing": true,
-          "other": true,
-          "size": 10,
-          "order": "count",
-          "style": {
-            "font-size": "10pt"
-          },
-          "donut": false,
-          "tilt": false,
-          "labels": true,
-          "arrangement": "horizontal",
-          "chart": "pie",
-          "counter_pos": "above",
-          "spyable": true,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ]
-          },
-          "tmode": "terms",
-          "tstat": "total",
-          "valuefield": ""
+          "mode": "markdown",
+          "content": "1. [Where do people tweet?](index.html#/dashboard/file/whereDoPeopleTweet.json)\n1. [What languages do people tweet in and what are the popular tweets?](index.html#/dashboard/file/languages.json)",
+          "style": {},
+          "title": "What can I see?"
         }
       ],
       "notice": false
@@ -99,29 +50,27 @@
   "index": {
     "interval": "none",
     "pattern": "[logstash-]YYYY.MM.DD",
-    "default": "twitter",
-    "warm_fields": true
+    "default": "_all",
+    "warm_fields": false
   },
-  "style": "light",
+  "style": "dark",
   "panel_hints": true,
   "pulldowns": [
     {
       "type": "query",
       "collapse": false,
       "notice": false,
-      "enable": true,
+      "enable": false,
       "query": "*",
       "pinned": true,
-      "history": [
-        "q=#ARGNED"
-      ],
+      "history": [],
       "remember": 10
     },
     {
       "type": "filtering",
       "collapse": false,
-      "notice": true,
-      "enable": true
+      "notice": false,
+      "enable": false
     }
   ],
   "nav": [
@@ -129,7 +78,7 @@
       "type": "timepicker",
       "collapse": false,
       "notice": false,
-      "enable": true,
+      "enable": false,
       "status": "Stable",
       "time_options": [
         "5m",
@@ -171,5 +120,5 @@
     "load_local": false,
     "hide": false
   },
-  "refresh": "1m"
+  "refresh": false
 }

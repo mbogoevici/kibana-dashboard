@@ -15,14 +15,13 @@ provided:
 
 1. Via nginx
 
-If on MacOS, start the nginx instance as follows:
+  If on MacOS, start the nginx instance as follows:
 
     ./start_nginx_mac.sh
     
-If on Ubuntu, start the nginx instance as follows:
+  If on Ubuntu, start the nginx instance as follows:
 
     ./start_nginx_ubuntu.sh
-    
     
 2. Via Spring Boot
 
